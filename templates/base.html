@@ -7,10 +7,32 @@
     {% load static %}
 </head>
 <body>
+   
+
+<style>
+.btn-gradient {
+    background: linear-gradient(90deg, #4f46e5, #6d28d9);
+    color: white !important;
+    font-weight: 600;
+    padding: 1rem 2.5rem; /* Bigger padding for big button */
+    border-radius: 50px;
+    font-size: 1.5rem; /* Bigger text */
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    text-decoration: none;
+}
+.btn-gradient:hover {
+    background: linear-gradient(90deg, #4338ca, #5b21b6);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+</style>
+
     {% block content %}{% endblock %}
     <footer class="bg-dark text-white text-center py-3 mt-5">
     &copy; {{ now|date:"Y" }} Shaik Mohammed Roshan Zammeer Hussai | mohrosh14@gmail.com
 </footer>
+
 
 </body>
 </html>

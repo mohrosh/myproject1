@@ -2,77 +2,57 @@
 {% block title %}Projects{% endblock %}
 
 {% block content %}
-<div class="container py-5">
-  <h1 class="fw-bold text-center mb-4">My Projects</h1>
+<style>
+/* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: linear-gradient(90deg, #4f46e5, #6d28d9);
+      color: #fff;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
 
-  <!-- Static Projects -->
+    .navbar h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #fbbf24;
+    }
+</style>
+<body>
+ <header class="navbar">
+    <h2>Portfolio</h2>
+    <nav class="nav-links">
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'about' %}">About</a>
+      <a href="{% url 'contact' %}">Contact</a>
+      <a href="{% url 'projects' %}">Projects</a>
+    </nav>
+  </header>
+<div class="container py-5">
   <div class="mb-5">
     <div class="row g-4">
 
-      <div class="col-md-6">
-        <div class="card shadow-sm h-100 border-0">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Capstone Project-CreditSage: A Credit Risk Analytics Platform for Responsible Lending</h5>
-            <p class="card-text">This project aimed to transform the traditional credit evaluation process by incorporating a multi-dimensional machine learning solution...</p>
-            <span class="badge bg-secondary">Python</span>
-            <span class="badge bg-info text-dark">Flask</span>
-            <span class="badge bg-warning text-dark">React</span>
-            <br><br>
-            <a href="/portfolio_site/main/static/projects/Capstone_CreditSage_Photos.docx" target="_blank" class="btn btn-outline-primary btn-sm">View Report</a>
-            <a href="/portfolio_site/main/static/projects/Capstone_CreditSage_Photos.docx" download class="btn btn-success btn-sm ms-2">Download</a>
-          </div>
-        </div>
-      </div>
 
-      <div class="col-md-6">
-        <div class="card shadow-sm h-100 border-0">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Business Data Analytics & Visualization - Diageo SDG Impact Assessment</h5>
-            <p class="card-text">This project assessed Diageo's progress toward Sustainable Development Goals (SDGs)...</p>
-            <span class="badge bg-success">Python (Pandas, scikit-learn)</span>
-            <span class="badge bg-dark"> Sustainable Development Strategy</span>
-            <span class="badge bg-danger">Tableau Dashboards & Data Storytelling</span>
-            <br>
-            <a href="/portfolio_site/main/static/projects/IS6051 - Business Data Analytics and Visualization Project_Group_15.pdf" target="_blank" class="btn btn-outline-primary btn-sm mt-2">View Report</a>
-            <a href="/portfolio_site/main/static/projects/IS6051 - Business Data Analytics and Visualization Project_Group_15.pdf" download class="btn btn-success btn-sm ms-2">Download</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="card shadow-sm h-100 border-0">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Design Thinking for Business Analysis - Nestay Platform</h5>
-            <p class="card-text">This project applied the design thinking methodology to address a real-world problem...</p>
-            <span class="badge bg-success">UX/UI Prototyping (Figma)</span>
-            <span class="badge bg-dark"> Stakeholder and Persona Development</span>
-            <span class="badge bg-danger">Housing & Community Market Analysis</span>
-            <br>
-            <a href="/portfolio_site/main/static/projects/Design Thinking.docx" target="_blank" class="btn btn-outline-primary btn-sm mt-2">View Report</a>
-            <a href="/portfolio_site/main/static/projects/Design Thinking.docx" download class="btn btn-success btn-sm ms-2">Download</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="card shadow-sm h-100 border-0">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Prediction of Surface Roughness and Tool Wear During Drilling of Hybrid Composite Laminates</h5>
-            <p class="card-text">In this project, drilling operations were performed on E-glass carbon epoxy hybrid composite laminates...</p>
-            <a href="/portfolio_site/main/static/projects/Predictive Analytics.docx" target="_blank" class="btn btn-outline-primary btn-sm mt-2">View Report</a>
-            <a href="/portfolio_site/main/static/projects/Predictive Analytics.docx" download class="btn btn-success btn-sm ms-2">Download</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
 
   <!-- Dynamic Projects Section -->
   <h2 class="fw-bold text-center mb-4">Uploaded Projects</h2>
-  <div class="text-center mb-4">
-    <a href="{% url 'upload_project' %}" class="btn btn-primary">Upload New Project</a>
-  </div>
 
   <div class="row g-4">
     {% for project in projects %}
@@ -93,4 +73,7 @@
   </div>
 
 </div>
+</body>
 {% endblock %}
+
+
